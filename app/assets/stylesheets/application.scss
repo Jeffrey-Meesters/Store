@@ -1,6 +1,26 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
+.page-header {
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  color: white;
+
+  .head-image {
+    background: url('http://www.derwitz.nl/wp-content/uploads/cropped-Banner2.jpg') center;
+    height: 150px;
+    width: 100%;
+    background-size: cover;
+
+      h1 {
+        margin-top: 0px;
+        margin-bottom: 10px;
+    }
+  }
+}
+
 .brand-logo {
   height: 30px;
   width: 30px;
