@@ -7,4 +7,8 @@ class ShoesController < ApplicationController
   def show
     @shoe = Shoe.find(params[:id])
   end
+
+  def edit
+    @shoe = Shoe.find(params[:id])
+  end
 end
