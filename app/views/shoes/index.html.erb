@@ -18,7 +18,6 @@
           <div class="carousel-caption">
             <h1>Example headline.</h1>
             <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
-            <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
           </div>
         </div>
       </div>
@@ -28,27 +27,24 @@
           <div class="carousel-caption">
             <h1>Another example headline.</h1>
             <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-            <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
           </div>
         </div>
       </div>
       <div class="item">
-        <img class="third-slide" src="https://photos6.spartoo.nl/photos/377/3772861/3772861_350_A.jpg" alt="Third slide">
+        <img class="third-slide" src="http://images.hardloopschoenen.online/originals/3/6/256_361d892fbc5cb137774ea17f402105ee5b5719c3.jpg" alt="Third slide">
         <div class="container">
           <div class="carousel-caption">
             <h1>One more for good measure.</h1>
             <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-            <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
           </div>
         </div>
       </div>
       <div class="item">
-      <img class="fourth-slide" src="http://cdn2.sarenza.net/static/_img/productsV4/0000037626/MD_0000037626_63095_04.jpg?201308170923" alt="fourth slide">
+      <img class="fourth-slide" src="http://images.hardloopschoenen.online/originals/3/6/256_361d892fbc5cb137774ea17f402105ee5b5719c3.jpg" alt="fourth slide">
       <div class="container">
         <div class="carousel-caption">
-          <h1>One more for good measure.</h1>
+          <h1>And one more for good measure.</h1>
           <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-          <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
         </div>
       </div>
     </div>
@@ -67,38 +63,21 @@
 
   <h1>Hello I'm shoes index!</h1>
 
-
-  <!-- All products will be displayed in this box  -->
-  <div class="panelwrap">
+  <div class="pannel">
     <% @shoes.each do |shoe| %>
-
-  <!-- One product will be displayed in this box -->
-    <div class="productpanel">
-
-  <!-- Inserting Race: Name -->
-      <div class="productheader">
-          <strong><%= shoe.brand %>:  <%= shoe.name.split.map(&:capitalize)*' ' %> </strong>
-      </div>
-
-  <!-- Inserting Photos -->
-      <!-- <div class="product_photo">
-        <%# @shoe.each do |photo| %>
-        <%#= image_tag photo.image.thumbnail_small %>
-        <%# end %>
-      </div> -->
-
-  <!-- Aligning shoe button and Price -->
-      <div class="ButtonPrice">
-        <div class="price"><strong>€<%= shoe.price %></strong></div>
-        <div class="see-shoes">
-            <%= link_to "Look", shoe_path(shoe.id), class: "btn btn-success" %>
+    <div class="shoe">
+      <div class="thumbnail">
+        <img src="<%= shoe.image_tag %>" alt="...">
+        <div class="caption">
+          <h3><%= shoe.brand %></h3>
+          <p> <%= shoe.name %> <br> € <%= shoe.price %> <br> </p>
+          <p><button class="btn btn-primary" role="button">More info</button>
+            <button class="btn btn-default" role="button">Update</button></p>
         </div>
       </div>
-
     </div>
-    <!-- end of product panel -->
-    <% end %>
-
+      <% end %>
+  </div>
 
 
 </body>

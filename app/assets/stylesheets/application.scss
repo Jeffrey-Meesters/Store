@@ -10,7 +10,7 @@
 
   .head-image {
     background: url('http://www.derwitz.nl/wp-content/uploads/cropped-Banner2.jpg') center;
-    height: 150px;
+    height: 75px;
     width: 100%;
     background-size: cover;
 
@@ -28,74 +28,21 @@
   padding: 0px;
 }
 
-.panelwrap{
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  flex-wrap: wrap;
+.shoe {
+  display: inline-block;
+  width: 20%;
 
-  margin-top: 20px;
-  width: 100%;
-  height: 100%;
-}
 
-.panel-default{
-  border-style: none;
-}
-
-.productpanel{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-
-  background:#F8F8F8;
-  color: #074E65;
-
-  width: 200px;
-  height: 200px;
-  margin: 13px;
-  letter-spacing:1px;
-}
-
-.productheader{
-  text-align: center;
-}
-
-.product_photo{
-  width: 150px;
-  height: 100px;
-  margin: 5px;
-
-  overflow: hidden;
-}
-
-.ButtonPrice{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-
-  width: 100%;
-}
-
-.see-shoes{
-    margin: 5px;
-}
-
-.backbutton{
-display: flex;
-justify-content: center;
-align-items: center;
-
-width: auto;
-height: 30px;
-padding: 10px;
-border: 1px solid white;
-
-text-decoration: none;
-font-size: 12px;
-color: white;
-letter-spacing: 2px;
-text-align: center;
+  .thumbnail {
+    display: block;
+    padding: 4px;
+    margin-bottom: 20px;
+    line-height: 1.42857143;
+    background-color: #fff;
+    border: 0px solid #ddd;
+    border-radius: 4px;
+    -webkit-transition: border 0.2s ease-in-out;
+    transition: border 0.2s ease-in-out;
+    transition: border 0.2s ease-in-out;
+  }
 }
