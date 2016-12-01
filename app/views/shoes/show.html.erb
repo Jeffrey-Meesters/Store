@@ -1,14 +1,9 @@
-<! DOCTYPE html>
-<html>
-<head></head>
-<body>
-    <div class="price">
-    price: <%= @shoe.price %>
-    </div>
-    <div class="container">
-      <%= @shoe.description %>
-    </div>
-    <button><%= link_to "Back", root_path %></button>
-
-</body>
-</html>
+<img src="<%= @shoe.image_tag %>" >
+<div class="price">
+price: <%= @shoe.price %>
+</div>
+<div class="container">
+  <%= @shoe.description %>
+</div>
+<%= link_to "Back", root_path, class: "btn btn-default" %>
+<%= link_to "Add to cart!", root_path, class: "btn btn-primary" %> <!-- this route must get changed for shoppingcart-->
