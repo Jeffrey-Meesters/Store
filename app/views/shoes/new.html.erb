@@ -1,0 +1,14 @@
+<%# if (current_user.admin) %>
+  <h1> Hi Admin!</h1>
+
+  <div class="Info">
+    Hi admin,
+  <br>
+    Here you can add new shoes to the Database.
+    Please make sure that you fill in everything
+    as the shoe will be visible to possible costumers imediatly.
+  </div>
+
+  <%= render "form" %>
+
+<%# end %>
