@@ -16,7 +16,7 @@ class ShoesController < ApplicationController
     @shoe = Shoe.new(shoe_params)
 
     if @shoe.save
-       redirect_to shoe
+       redirect_to @shoe
     else
        render 'new'
     end
