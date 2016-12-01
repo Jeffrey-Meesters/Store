@@ -1,4 +1,4 @@
-# new project - in development
+# new project - in development :metal:
 
 ![Image of index]
 (http://res.cloudinary.com/debyt5msz/image/upload/v1480600155/Schermafbeelding_2016-12-01_om_14.47.47_t0vwe5.png)
