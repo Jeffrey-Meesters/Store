@@ -4,6 +4,5 @@ class Shoe < ApplicationRecord
   validates :name, presence: true
   validates :description, presence: true
   validates :price, presence: true
-  validates :image_tag, presence: true
 
 end

@@ -6,7 +6,6 @@ price: <%= @shoe.price %>
   <%= @shoe.description %>
 </div>
 <%= link_to "Back", root_path, class: "btn btn-default" %>
-<%= link_to "Add to cart!", root_path, class: "btn btn-primary" %> <!-- this route must get changed for shoppingcart-->
 
 <% if (current_user.try(:admin?)) %>
 <!-- delete button for Admin, not yet sure if it stays here -->

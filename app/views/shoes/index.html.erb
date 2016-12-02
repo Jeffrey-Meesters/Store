@@ -67,7 +67,6 @@
         <div class="caption">
           <h3><%= shoe.brand %></h3>
           <p> <%= shoe.name %> <br> € <%= shoe.price %> <br> </p>
-          <!-- buttons need to get an action -->
           <p><% if (current_user.try(:admin?)) %>  <%= link_to "Update", edit_shoe_path(shoe.id), class: "btn btn-default" %> <% end %>
               <%= link_to "More info", shoe_path(shoe.id), class: "btn btn-primary" %></p>
         </div>
@@ -77,7 +76,8 @@
   </div>
 
   <% if (current_user.try(:admin?)) %>
-  <div class="Administration">
-    <%= link_to "New shoe", new_shoe_path %>
+  <hr>
+  <div class="administration">
+    <%= link_to "New shoe", new_shoe_path, class: "btn btn-primary", id: "new" %>
   </div>
   <% end %>
