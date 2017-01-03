@@ -6,5 +6,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :shoes
-  resources :cart
+  resource :cart, only: [:show]
+  resources :order_items, only: [:create, :update, :destroy]
+
 end
