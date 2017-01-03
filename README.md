@@ -16,16 +16,16 @@
 
 ## README
 
-* Ruby version
-Ruby 2.3.1
-Rails 5.0
+- Ruby version
+  - Ruby 2.3.1
+  - Rails 5.0
 
-* Database creation
-rails db:setup
+- Database creation
+  - terminal: rails db:setup
 
-* Database initialization
-rails db:seed
+- Database initialization
+  - terminal: rails db:seed
 
-* Run web-app
-rails s
-go in your browser to: localhost:3000
+- Run web-app
+  - terminal: rails s
+  - go in your browser to: localhost:3000
