@@ -1,11 +1,26 @@
 <img src="<%= @shoe.image_tag %>" >
-<div class="price">
-price: <%= @shoe.price %>
+<div class="well">
+
+  <div class="row">
+    <div class="col-xs-8">
+      <h4><%= @shoe.name %></small></h4>
+    </div>
+    <div class="col-xs-4">
+
+      <%= form_for @order_item, remote: true do |f| %>
+      <h4 class="text-right">Unit Price: <span style="color: green"><%= number_to_currency @shoe.price %></span></h4>
+        <div class="input-group">
+          <%= f.number_field :quantity, value: 1, class: "form-control", min: 1 %>
+          <div class="input-group-btn">
+            <%= f.hidden_field :product_id, value: @shoe.id %>
+            <%= f.submit "Add to Cart", class: "btn btn-primary" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+  </div>
 </div>
-<div class="container">
-  <%= @shoe.description %>
-</div>
-<%= link_to "Back", root_path, class: "btn btn-default" %>
 
 <% if (current_user.try(:admin?)) %>
 <!-- delete button for Admin, not yet sure if it stays here -->
