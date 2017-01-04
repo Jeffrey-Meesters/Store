@@ -1,32 +1,162 @@
 <!-- THIS IS THE CHECKOUT PAGE -->
-<form action="/your-server-side-code" method="POST">
-<script
-  src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-  data-key="pk_test_Jm1P1lVhQQIqIt7G5yuPgJQX"
-  data-amount="999"
-  data-name="Demo Site"
-  data-description="Widget"
-  data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
-  data-locale="auto"
-  data-zip-code="true"
-  data-currency="eur">
-</script>
-</form>
-<%= form_tag charges_path do %>
-  <article>
-    <% if flash[:error].present? %>
-      <div id="error_explanation">
-        <p><%= flash[:error] %></p>
-      </div>
-    <% end %>
-    <label class="amount">
-      <span>Amount: $5.00</span>
-    </label>
-  </article>
+<div class="productoverview">
+  <h1 class="confirmpagetitle">Overview of products</h1>
 
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="A month's subscription"
-          data-amount="500"
-          data-locale="auto"></script>
-<% end %>
+  <br>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title"><strong>Order summary</strong></h3>
+        </div>
+        <div class="panel-body">
+          <div class="table-responsive">
+            <table class="table table-condensed">
+              <thead>
+              <tr>
+                <td class="text-left"><strong>Product</strong></td>
+                <td class="text-left"><strong>Price</strong></td>
+                <td class="text-left"><strong>Quantity</strong></td>
+                <td class="text-right"><strong>Total Price</strong></td>
+              </tr>
+              </thead>
+              <tbody>
+              <!-- foreach ($order->lineItems as $line) or some such thing here -->
+              <% @order_items.each do |order_item| %>
+                  <tr>
+                    <td class="text-left"><%="#{order_item.shoe.name}"%></td>
+                    <td class="text-left"><%="#{order_item.unit_price}"%></td>
+                    <td class="text-left"><%="#{order_item.quantity}"%></td>
+                    <td class="text-right"><%="#{order_item.quantity * order_item.unit_price}"%></td>
+                  </tr>
+              <% end %>
+              <tr>
+                <td class="thick-line"></td>
+                <td class="thick-line"></td>
+                <td class="thick-line text-left">Subtotal</td>
+                <td class="thick-line text-right"><%="#{number_to_currency current_order.subtotal}" %>    </td>
+              </tr>
+              <tr>
+                <td class="no-line"></td>
+                <td class="no-line"></td>
+                <td class="no-line text-left">Shipping</td>
+                <td class="no-line text-right"><%="#{number_to_currency current_order.shipping }" %></td>
+              </tr>
+                <tr>
+                  <td class="no-line"></td>
+                  <td class="no-line"></td>
+                  <td class="no-line text-left">Tax</td>
+                  <td class="no-line text-right"><%="#{number_to_currency current_order.tax }" %></td>
+                </tr>
+              <tr>
+                <td class="no-line"></td>
+                <td class="no-line"></td>
+                <td class="no-line text-left"><strong>Total</strong></td>
+                <td class="no-line text-right"><%="#{number_to_currency current_order.total }" %></td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>
+<form class="form-horizontal">
+    <fieldset>
+
+
+      <!-- Form Name -->
+      <legend class="confirmpagetitle"><h1>Please enter your Shipping Details</h1><br></legend>
+      <BR>
+<div class="shippingform"
+      <!-- Full name-->
+      <div class="form-group">
+        <label class="col-md-2 control-label" for="textinput">Full name</label>
+        <div class="col-md-3">
+          <input id="textinput" name="textinput" type="text" placeholder="Your full name" class="form-control input-md">
+        </div>
+      </div>
+
+      <!-- Addressline 1-->
+      <div class="form-group">
+        <label class="col-md-2 control-label" for="textinput">Address</label>
+        <div class="col-md-3">
+          <input id="textinput" name="textinput" type="text" placeholder="Street and number" class="form-control input-md">
+        </div>
+      </div>
+
+      <!-- Addressline 2-->
+      <div class="form-group">
+        <label class="col-md-2 control-label" for="textinput">Address</label>
+        <div class="col-md-3">
+          <input id="textinput" name="textinput" type="text" placeholder="Address" class="form-control input-md">
+        </div>
+      </div>
+
+      <!-- Postalcode-->
+      <div class="form-group">
+        <label class="col-md-2 control-label" for="textinput">Postalcode</label>
+        <div class="col-md-3">
+          <input id="textinput" name="textinput" type="text" placeholder="Postalcode" class="form-control input-md">
+        </div>
+      </div>
+
+      <!-- City-->
+      <div class="form-group">
+        <label class="col-md-2 control-label" for="textinput">City</label>
+        <div class="col-md-3">
+          <input id="textinput" name="textinput" type="text" placeholder="City" class="form-control input-md">
+        </div>
+      </div>
+
+      <!-- Country -->
+      <div class="form-group">
+        <label class="col-md-2 control-label" for="selectbasic">Country</label>
+        <div class="col-md-3">
+          <select id="selectbasic" name="selectbasic" class="form-control">
+            <option value="" selected="selected">(please select a country)</option>
+            <option value="NL">Netherlands</option>
+            <option value="BE">Belgium</option>
+            <option value="FR">France</option>
+            <option value="DE">Germany</option>
+          </select>
+        </div>
+      </div>
+
+    </fieldset>
+  </form>
+</div>
+<BR>
+<BR>
+
+<div class="paybutton">
+  <%= form_tag charges_path do %>
+    <article>
+      <% if flash[:error].present? %>
+        <div id="error_explanation">
+          <p><%= flash[:error] %></p>
+        </div>
+      <% end %>
+    </article>
+
+<form action="/your-server-side-code" method="POST">
+  <script
+    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key="pk_test_Jm1P1lVhQQIqIt7G5yuPgJQX"
+    data-amount="<%= current_order.total * 100 %>"
+    data-name="Schoenen voor mannen!"
+    data-description="schoenenvoormannen.com"
+    data-image="http://res.cloudinary.com/debyt5msz/image/upload/v1483528132/favicon_qskoqw.png"
+    data-locale="auto"
+    data-zip-code="true"
+    data-currency="eur">
+  </script>
+</form>
+
+</div>
+
+  <% end %>
+</div>
