@@ -15,4 +15,17 @@
   <% @order_items.each do |order_item| %>
     <%= render 'carts/cart_row', shoe: order_item.shoe, order_item: order_item, show_total: true %>
   <% end %>
+  <form action="/your-server-side-code" method="POST">
+  <script
+    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key="pk_test_Jm1P1lVhQQIqIt7G5yuPgJQX"
+    data-amount="999"
+    data-name="Demo Site"
+    data-description="Widget"
+    data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+    data-locale="auto"
+    data-zip-code="true"
+    data-currency="eur">
+  </script>
+</form>
 <% end %>
