@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   resources :shoes
   resource :cart, only: [:show]
   resources :order_items, only: [:create, :update, :destroy]
+  resources :charges
 
 end

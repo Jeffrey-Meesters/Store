@@ -32,6 +32,10 @@ gem 'jbuilder', '~> 2.5'
 
 # Devise for user authentication
 gem 'devise'
+
+# Stripe for costumer payments
+gem 'stripe'
+
 # Bootstrap for faster front-end development
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'sass-rails', '>= 3.2'

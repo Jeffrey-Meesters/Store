@@ -45,7 +45,9 @@
               </div>
               <button type="submit" class="btn btn-default">Submit</button>
             </form> <!-- end search field -->
+            <!-- CART -->
             <li class="cart-text"><%= render 'layouts/cart_text' %></li>
+            <!-- end cart -->
             <% if !user_signed_in? %>
               <li><%= link_to "Log In", new_user_session_path %></li>
               <li><%= link_to "Sign Up", new_user_registration_path %></li>
