@@ -128,10 +128,6 @@
 
     </fieldset>
   </form>
-</div>
-<BR>
-<BR>
-
 <div class="paybutton">
   <%= form_tag charges_path do %>
     <article>
@@ -141,22 +137,19 @@
         </div>
       <% end %>
     </article>
-
-<form action="/your-server-side-code" method="POST">
-  <script
-    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-    data-key="pk_test_Jm1P1lVhQQIqIt7G5yuPgJQX"
-    data-amount="<%= current_order.total * 100 %>"
-    data-name="Schoenen voor mannen!"
-    data-description="schoenenvoormannen.com"
-    data-image="http://res.cloudinary.com/debyt5msz/image/upload/v1483528132/favicon_qskoqw.png"
-    data-locale="auto"
-    data-zip-code="true"
-    data-currency="eur">
-  </script>
-</form>
-
+  <form action="/your-server-side-code" method="POST">
+    <script
+      src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+      data-key="pk_test_Jm1P1lVhQQIqIt7G5yuPgJQX"
+      data-amount="<%= current_order.total * 100 %>"
+      data-name="Schoenen voor mannen!"
+      data-description="schoenenvoormannen.com"
+      data-image="https://res.cloudinary.com/debyt5msz/image/upload/v1483528132/favicon_qskoqw.png"
+      data-locale="auto"
+      data-zip-code="true"
+      data-currency="eur">
+    </script>
+  </form>
 </div>
-
-  <% end %>
+<%end%>
 </div>
