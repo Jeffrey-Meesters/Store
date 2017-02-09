@@ -7,12 +7,18 @@
     </ul>
   </div>
 <% end %>
+
 <% if @order_items.size == 0 %>
   <p class="text-center">
     There are no items in your shopping cart.  Please <%= link_to "go back", root_path %> and add some items to your cart.
   </p>
-<% else %>
-  <% @order_items.each do |order_item| %>
-    <%= render 'carts/cart_row', shoe: order_item.shoe, order_item: order_item, show_total: true %>
+  <% else %>
+    <% @order_items.each do |order_item| %>
+      <%= render 'carts/cart_row', shoe: order_item.shoe, order_item: order_item, show_total: true %>
   <% end %>
+  <div class="btn-group" role="group" aria-label="...">
+    <button type="button" class="btn btn-default">
+      <%= link_to "Buy! go to check out", new_charge_path %>
+    </button>
+  </div>
 <% end %>
