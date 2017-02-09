@@ -1,4 +1,4 @@
-# new project - in development :metal:
+# Project - in development :metal:
 
 ###An Image of the Shoes index page:
 
@@ -30,7 +30,13 @@
 
 - Database initialization
   - terminal: rails db:seed
-
+  
+- To use stripe
+  - Create an account on stripe
+  - replace your keys with my test-keys     <del>(O, o security issue)</del>
+  
 - Run web-app
-  - terminal: rails s
+  - Go to the apps' root folder in your terminal
+  - type: gem install
+  - start the server: PUBLISHABLE_KEY=!!YOUR KEY!!\SECRET_KEY=!!YOUR KEY!! rails s
   - go in your browser to: localhost:3000
