@@ -14,6 +14,11 @@
 (http://res.cloudinary.com/debyt5msz/image/upload/v1483455329/Schermafbeelding_2017-01-03_om_15.54.14_mrzd6x.png)
 
 
+###An Image of Stripe checkout and Stripe dashboard
+![Image of Stripe]
+(http://res.cloudinary.com/debyt5msz/image/upload/v1483530857/Schermafbeelding_2017-01-04_om_12.55.05_bguweh.png)
+
+
 ## README
 
 - Ruby version
